@@ -18,7 +18,6 @@ public class InMemoryUserDataAccessObject implements SignupUserDataAccessInterfa
 
     private final Map<String, User> users = new HashMap<>();
 
-    private String name;
     private String currentUser;
 
     @Override
@@ -31,13 +30,13 @@ public class InMemoryUserDataAccessObject implements SignupUserDataAccessInterfa
         users.put(user.getName(), user);
     }
 
-    public void setCurrentUser(String currentUser) {
+    public void setCurrentUser(String name) {
         this.currentUser = name;
     }
 
     @Override
     public String getCurrentUser() {
-        return "this.currentUser";
+        return this.currentUser;
     }
 
     @Override
